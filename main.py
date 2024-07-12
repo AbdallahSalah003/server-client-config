@@ -19,5 +19,5 @@ while True:
         combinations = generate_combinations(options)
         combinations_expected_values = generate_expected_values(combinations, options)
         result = is_valid_tc(combinations_expected_values, options)
-        csv_output(result)
+        csv_output(result, "output.csv")
         break

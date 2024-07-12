@@ -62,7 +62,7 @@ def is_valid_tc(combinations, options):
         invalid = 0
         # iterate over the client options' values
         for j in range(start_ind, end_ind):
-            if combinations[i][j] not in ("NA", combinations[i][j+n+1]):
+            if combinations[i][j] not in ("NA", combinations[i][j + n + 1]):
                 invalid = 1
                 break
         if invalid:
@@ -81,9 +81,8 @@ def set_expected_values_to_na_if_invalid(combinations, n):
                 combinations[i][j] = "NA"
 
 
-
-def csv_output(result):
-    with open('output.csv', 'w') as outputfile:
+def csv_output(result, filepath):
+    with open(filepath, 'w', newline='') as outputfile:
         csv_writer = csv.writer(outputfile, delimiter=',')
         for row in result:
             csv_writer.writerow(row)
