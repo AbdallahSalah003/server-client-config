@@ -10,6 +10,8 @@ while True:
     except (InvalidLogic, InvalidInput) as e:
         print(str(e))
         options = input(f"Please provide valid options with space in between\n")
+        if options == 'q':
+            break
         options = options.split()
         continue
     except Exception as e:
