@@ -1,5 +1,6 @@
 import string
 import itertools
+import csv
 from error_handling import InvalidLogic, InvalidInput
 
 
@@ -76,3 +77,11 @@ def set_expected_values_to_na_if_invalid(combinations, n):
         if combinations[i][2 * n + 1] == "NO":
             for j in range(2 * n + 2, len(combinations[i])):
                 combinations[i][j] = "NA"
+
+
+
+def csv_output(result):
+    with open('output.csv', 'w') as outputfile:
+        csv_writer = csv.writer(outputfile, delimiter=',')
+        for row in result:
+            csv_writer.writerow(row)
