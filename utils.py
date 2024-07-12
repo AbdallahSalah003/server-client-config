@@ -37,11 +37,10 @@ def generate_expected_values(formatted_combinations, options):
     for op in options:
         extend_header.append(f"Expected {op}")
     formatted_combinations[0] = formatted_combinations[0] + extend_header
-    # start index of expected values
-    # we need to skip field "Valid TC"
-    start = 2 * len(options) + 2
+    # iterate over all test cases combinations
     for i in range(1, len(formatted_combinations)):
-        formatted_combinations[i].append("placeholder")
+        formatted_combinations[i].append("ValidTC_placeholder")
+        # iterate over master options' values
         for j in range(1, len(options) + 1):
             if formatted_combinations[i][j] != "NA":
                 formatted_combinations[i].append(formatted_combinations[i][j])
@@ -49,3 +48,31 @@ def generate_expected_values(formatted_combinations, options):
                 formatted_combinations[i].append("TRUE")
     return formatted_combinations
 
+
+def is_valid_tc(combinations, options):
+    #  a test case is valid if the client values is "NA" or same as Expected
+    n = len(options)
+    start_ind = n + 1
+    end_ind = 2 * n + 1
+    # iterate over all test cases
+    for i in range(1, len(combinations)):
+        invalid = 0
+        # iterate over the client options' values
+        for j in range(start_ind, end_ind):
+            if combinations[i][j] not in ("NA", combinations[i][j+n+1]):
+                invalid = 1
+                break
+        if invalid:
+            combinations[i][end_ind] = "NO"
+        else:
+            combinations[i][end_ind] = "YES"
+    set_expected_values_to_na_if_invalid(combinations, len(options))
+    return combinations
+
+
+def set_expected_values_to_na_if_invalid(combinations, n):
+    for i in range(1, len(combinations)):
+        # invalid test case
+        if combinations[i][2 * n + 1] == "NO":
+            for j in range(2 * n + 2, len(combinations[i])):
+                combinations[i][j] = "NA"
