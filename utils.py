@@ -30,3 +30,22 @@ def generate_combinations(options):
         tmp = [counter] + list(combinations[i])
         formatted_combinations.append(tmp)
     return formatted_combinations
+
+
+def generate_expected_values(formatted_combinations, options):
+    extend_header = ["Valid TC"]
+    for op in options:
+        extend_header.append(f"Expected {op}")
+    formatted_combinations[0] = formatted_combinations[0] + extend_header
+    # start index of expected values
+    # we need to skip field "Valid TC"
+    start = 2 * len(options) + 2
+    for i in range(1, len(formatted_combinations)):
+        formatted_combinations[i].append("placeholder")
+        for j in range(1, len(options) + 1):
+            if formatted_combinations[i][j] != "NA":
+                formatted_combinations[i].append(formatted_combinations[i][j])
+            else:
+                formatted_combinations[i].append("TRUE")
+    return formatted_combinations
+
