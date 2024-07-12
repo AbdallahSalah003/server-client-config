@@ -8,6 +8,7 @@ def validate_inputs(inputs):
     if not len(inputs):
         raise InvalidLogic(f"No server options provided")
     special_chars = set(string.punctuation)
+    special_chars.add(' ')
     for arg in inputs:
         if any(char in special_chars for char in arg):
             raise InvalidInput(f"Special chars are not allowed")
