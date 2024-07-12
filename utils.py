@@ -16,7 +16,7 @@ def validate_inputs(inputs):
 
 
 def generate_combinations(options):
-    header = ["TestCaseID"]
+    header = ["TestCase ID"]
     for i in range(0, len(options)):
         header.append(f"Master Option For {options[i]}")
     for i in range(0, len(options)):
