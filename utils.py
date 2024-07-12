@@ -27,10 +27,11 @@ def generate_combinations(options):
     values = ["TRUE", "FALSE", "NA"]
     n = 2 * len(options)
     combinations = list(itertools.product(values, repeat=n))
-    for i in range(0, 3 ** n):
-        counter += 1
-        tmp = [counter] + list(combinations[i])
-        formatted_combinations.append(tmp)
+    if n:
+        for i in range(0, 3 ** n):
+            counter += 1
+            tmp = [counter] + list(combinations[i])
+            formatted_combinations.append(tmp)
     return formatted_combinations
 
 
