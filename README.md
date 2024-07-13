@@ -14,6 +14,12 @@ message will be shown</li>
     <li>An indeed invalid test case, then all expected options' values are set to "NA"</li>
 </ul>
 
+## Documents
+1. Code Structure Diagram
+2. Report With All Test Cases
+3. Report With Unit and Integration Test Cases
+4. Sample output: output.csv
+5. README.md 
 
 ## Built With
 [![python][python]][python-url] [![pytest][pytest]][pytest-url]
