@@ -15,11 +15,11 @@ message will be shown</li>
 </ul>
 
 ## Documents
-1. Code Structure Diagram
-2. Report With All Test Cases
-3. Report With Unit and Integration Test Cases
-4. Sample output: output.csv
-5. README.md 
+1. <a href="https://github.com/AbdallahSalah003/server-client-config/blob/main/code-structure-diagram.png">Code Structure Diagram</a>
+2. <a href="https://github.com/AbdallahSalah003/server-client-config/blob/main/all-test-cases.pdf">Report With All Test Cases</a>
+3. <a href="https://github.com/AbdallahSalah003/server-client-config/blob/main/unit-integration-testing.pdf">Report With Unit and Integration Test Cases</a>
+4. <a href="https://github.com/AbdallahSalah003/server-client-config/blob/main/output.csv">Sample output: output.csv</a>
+5. <a href="https://github.com/AbdallahSalah003/server-client-config/blob/main/README.md">README.md</a>
 
 ## Built With
 [![python][python]][python-url] [![pytest][pytest]][pytest-url]
