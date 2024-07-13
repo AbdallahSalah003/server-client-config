@@ -7,7 +7,7 @@ A Python program to simulate and test the configuration of a server by master an
 <ul>
     <li>If slave client configures the server with same values already set by master client, no error 
 message will be shown</li>
-    <li>If slave client configures the server with default value, no error 
+    <li>If slave client configures the server with default value, also does not contradict with master, no error 
 message will be shown</li>
     <li>Server all options Default value = TRUE </li>
     <li>A test case is invalid if it does not follow the rules</li>
