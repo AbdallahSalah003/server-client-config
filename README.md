@@ -33,11 +33,11 @@ sudo apt install python3
 python3 main.py option1, option2, ..... , optionN
 ```
 4. The program will run while the options are not valid or until press q to quit
-4. To run unit tests, install pytest first
+4. To run unit and integration tests, install pytest first
 ```
 pip install pytest
 ```
-6. Run the following command to run all unit-tests
+6. Run the following command to run all tests
 ```
 python3 -m pytest
 ```
